@@ -12,10 +12,10 @@ body, button {
     width: var(--offcanvas-width);
 }
 
-main {
+/*main {
     margin-left: var(--offcanvas-width);
 }
-
+*/
 @media (min-width: 992px) {
     .sidebar-nav {
         transform: none;

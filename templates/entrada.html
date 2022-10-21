@@ -2,20 +2,22 @@
 {% block title %} Entrada Correspondencia{% endblock %}
 {% block active_entrada %} active {% endblock %}
 {% block content %}
+	<div class="container ">
 
-		<h3>Entrada de correspondencia</h3>
+
+	<h3>Entrada de correspondencia</h3>
 
 
-		<form method="post">
+	<form method="post">
 			{% csrf_token %}
 	<div class="mb-3 row">
-		<label for="radicado" class="col-sm-1 col-form-label">Radicado: </label>
+		<label for="radicado" class="col-sm-2 col-form-label">Radicado: </label>
 		<div class="col-sm-4">
 			<input type="text" name="radicado" class="form-control" required id="id_radicado" placeholder="RVD-0000">
 		</div>
 	</div>
 		<div class="mb-3 row">
-		<label for="recibido_de" class="col-sm-1 col-form-label">Recibido de: </label>
+		<label for="recibido_de" class="col-sm-2 col-form-label">Recibido de: </label>
 		<div class="col-sm-4">
 			<input type="text" name="recibido_de" class="form-control" required id="id_recibido_de">
 		</div>
@@ -23,7 +25,7 @@
 		<div class="mb-3 row">
 
 
-				<label for="fecha_recibido" class="col-sm-1 col-form-label">Fecha recibido: </label>
+				<label for="fecha_recibido" class="col-sm-2 col-form-label">Fecha recibido: </label>
 			<div class="col-sm-4">
 
 				<input type="text" name="fecha_recibido" class="form-control" required id="id_fecha_recibido">
@@ -33,7 +35,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="asunto" class="col-sm-1 col-form-label">Asunto: </label>
+				<label for="asunto" class="col-sm-2 col-form-label">Asunto: </label>
 			<div class="col-sm-4">
 				<input type="text" name="asunto" class="form-control" required id="id_asunto">
 			</div>
@@ -42,7 +44,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="num_folios" class="col-sm-1 col-form-label">Número folios: </label>
+				<label for="num_folios" class="col-sm-2 col-form-label">Número folios: </label>
 			<div class="col-sm-4">
 				<input type="text" name="num_folios" class="form-control" required id="id_asunto">
 			</div>
@@ -51,7 +53,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="firmado_por" class="col-sm-1 col-form-label">Firmado por: </label>
+				<label for="firmado_por" class="col-sm-2 col-form-label">Firmado por: </label>
 			<div class="col-sm-4">
 				<input type="text" name="firmado_por" class="form-control" required id="id_asunto">
 			</div>
@@ -60,7 +62,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="cargo_firm" class="col-sm-1 col-form-label">Cargo firmante: </label>
+				<label for="cargo_firm" class="col-sm-2 col-form-label">Cargo firmante: </label>
 			<div class="col-sm-4">
 				<input type="text" name="cargo_firm" class="form-control" required id="id_asunto">
 			</div>
@@ -69,7 +71,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="enviado_a" class="col-sm-1 col-form-label">Enviado a: </label>
+				<label for="enviado_a" class="col-sm-2 col-form-label">Enviado a: </label>
 			<div class="col-sm-4">
 				<input type="text" name="enviado_a" class="form-control" required id="id_asunto">
 			</div>
@@ -78,7 +80,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="fecha_envio" class="col-sm-1 col-form-label">Fecha envío: </label>
+				<label for="fecha_envio" class="col-sm-2 col-form-label">Fecha envío: </label>
 			<div class="col-sm-4">
 				<input type="text" name="fecha_envio" class="form-control" required id="id_asunto">
 			</div>
@@ -87,7 +89,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="almacenado" class="col-sm-1 col-form-label">Almacenado AZ: </label>
+				<label for="almacenado" class="col-sm-2 col-form-label">Almacenado AZ: </label>
 			<div class="col-sm-4">
 				<input type="text" name="almacenado" class="form-control" required id="id_asunto">
 			</div>
@@ -96,7 +98,7 @@
 
 		<div class="mb-3 row">
 
-				<label for="observaciones" class="col-sm-1 col-form-label">Observaciones: </label>
+				<label for="observaciones" class="col-sm-2 col-form-label">Observaciones: </label>
 			<div class="col-sm-4">
 				<input type="text" name="observaciones" class="form-control" required id="id_asunto">
 			</div>
@@ -112,5 +114,7 @@
 		</div>
 
 		</form>
+
+	</div>
 
 {% endblock %}
