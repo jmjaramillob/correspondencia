@@ -23,12 +23,16 @@
 		</div>
 		</div>
 		<div class="mb-3 row">
-
-
-				<label for="fecha_recibido" class="col-sm-2 col-form-label">Fecha recibido: </label>
+			
+			<label for="fecha_recibido" class="col-sm-2 col-form-label">Fecha recibido: </label>
 			<div class="col-sm-4">
 
-				<input type="text" name="fecha_recibido" class="form-control" required id="id_fecha_recibido">
+				<div class="input-group date" id="reservationdate" data-target-input="nearest">
+					<input type="text" id="fecha_recibido" name="fecha_recibido" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+					<div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+						<div class="input-group-text"><i class="bi bi-calendar"></i></div>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -108,7 +112,7 @@
 
 
 			<div class="col-sm-1">
-				<input type="button" class="col-sm-1 form-control btn-success" value="Enviar">
+				<input type="submit" class="col-sm-1 form-control btn-success" value="Enviar">
 			</div>
 
 		</div>

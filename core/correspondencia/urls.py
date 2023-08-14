@@ -1,7 +1,9 @@
-from django.conf.urls import url
-from core.correspondencia.views import IndexView, EntradaView
+from django.urls import path
+from core.correspondencia.views import *
 
 urlpatterns = [
-    url('inicio/', IndexView.as_view(), name="index"),
-    url('entrada/', EntradaView.as_view(), name="entrada"),
+    path('inicio/', IndexView.as_view(), name="index"),
+    path('entrada/', EntradaView.as_view(), name="entrada"),
+    path('salida/', SalidaView.as_view(), name="salida"),
+    path('archivo/', ArchivoView.as_view(), name="archivo"),
 ]

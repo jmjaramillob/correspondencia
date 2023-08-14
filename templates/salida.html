@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block title %}Salida Correspondencia{% endblock %}
+{% block active_salida %} active {% endblock %} 
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <p> Buscar</p>
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control" placeholder="Radicado">
+            <span class="input-group-append">
+              <button type="button" class="btn btn-info btn-flat buscar"><i class="bi bi-search"></i></button>
+            </span>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %} 
+<script>
+
+</script>
+{% endblock %}

@@ -10,8 +10,18 @@
 	<link rel="stylesheet" href="{% static 'css/icons/bootstrap-icons.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/dataTables.bootstrap5.min.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="{% static 'css/daterangepicker.css' %}">
+  <!-- select2 -->
+  <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'css/fontawesome/all.min.css'%}">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  
 	{% block css %} {% endblock %}
-	<title>Correspondencia</title>
+	<title>{%block title %} {% endblock %}</title>
 </head>
 <body>
 <!-- top navigation bar -->
@@ -61,6 +71,7 @@
     <nav class="navbar-dark">
       
       <ul class="navbar-nav">
+        
         <li>
           <a href="{% url 'entrada' %}" class="nav-link px-2 {% block active_entrada %}{% endblock %}">
             <span class="me-2">
@@ -73,7 +84,7 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-          <a href="#" class="nav-link px-2 {% block active_salida %}{% endblock %}">
+          <a href="{% url 'salida' %}" class="nav-link px-2 {% block active_salida %}{% endblock %}">
             <span class="me-2">
               <i class="bi bi-box-arrow-up"></i>
             </span>
@@ -83,13 +94,14 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-          <a href="#" class="nav-link px-2 {% block active_archivos %}{% endblock %}">
+          <a href="{% url 'archivo' %}" class="nav-link px-2 {% block active_archivos %}{% endblock %}">
             <span class="me-2">
               <i class="bi bi-archive-fill"></i>
             </span>
             <span>Archivo</span>
           </a>
         </li>
+        <li><hr class="dropdown-divider"></li>
       </ul>
     
     </nav>
@@ -111,9 +123,68 @@
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
-<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
 <script src="{% static 'js/dataTables.bootstrap5.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'js/select2/select2.full.min.js' %}"></script>
+<script src="{% static 'js/moment/moment.min.js'%}"></script>
+<script type="text/javascript">
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    //Date picker
+    $('#reservationdate').datepicker({
+        format: 'L'
+    });
+
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Timepicker
+    $('#timepicker').datepicker({
+      format: 'LT'
+    })
+
+  })
+  
+</script>
 {% block javascript %} {% endblock %}
 </body>
 </html>

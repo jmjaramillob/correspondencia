@@ -1,5 +1,6 @@
-from datetime import datetime
+from datetime import date
 from django.db import models
+from django.utils.timezone import now
 
 # Create your models here.
 
@@ -104,13 +105,13 @@ class Correspondencia(models.Model):
     ]
     radicado = models.CharField(max_length=10, unique=True, blank=False, default="RVD")
     recibido_de = models.CharField(max_length=50, unique=False, blank=False, default="")
-    fecha_recibido = models.DateTimeField(auto_now_add=True)
+    fecha_recibido = models.DateField(default=now)
     asunto = models.CharField(max_length=100, blank=False, null=False)
     numero_folios = models.PositiveIntegerField(null=False, default=1)
     firmado_por = models.CharField(max_length=50, unique=False, blank=False)
     cargo_firmante = models.CharField(max_length=50, unique=False, blank=False)
     enviado_a = models.CharField(max_length=20, unique=False, blank=False, default="none")
-    fecha_envio = models.DateTimeField(auto_now_add=False, default=datetime.now)
+    fecha_envio = models.DateField(default=now)
     almacenado_AZ = models.CharField(max_length=100, choices=AZ)
     observaciones = models.TextField(blank=False,)
     entrada = models.PositiveSmallIntegerField(default=1)

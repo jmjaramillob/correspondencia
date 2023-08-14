@@ -77,10 +77,15 @@ WSGI_APPLICATION = 'proyectoCorrespondencia.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'correspondenciaDB',
+        'USER': 'root',
+        'PASSWORD': 'bdatos',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
@@ -128,3 +133,5 @@ TIME_INPUT_FORMATS = ('%H:%M',)
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
