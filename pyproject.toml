@@ -7,8 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-django = "^4.2.4"
-pymysql = "^1.1.0"
+django = "4.2.4"
+pymysql = "1.1.0"
+cryptography = "^41.0.3"
 
 
 [build-system]
