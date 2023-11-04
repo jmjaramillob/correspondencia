@@ -84,7 +84,7 @@ class Correspondencia(models.Model):
             ('12.5. Inst. PolPublicas IPREG', '12.5. Inst. PolPublicas IPREG'),
         )),
         (
-            '13. Rutas Acady Salidas de Campo',(
+            '13. Rutas Acad y Salidas de Campo',(
             ('13.1. Rutas Acad', '13.1. Rutas Acad'),
             ('13.2. Salidas de Campo', '13.2. Salidas de Campo'),
         )),
